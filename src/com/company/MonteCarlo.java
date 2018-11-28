@@ -18,7 +18,17 @@ public class MonteCarlo {
 
     public double nextRainDrop_x()
     {
-        return rndm.nextInt((int)(h * k));
+        return (h * 2) * rndm.nextDouble();
+    }
+
+    public double nextRainDrop_y()
+    {
+       return (k * 2) * rndm.nextDouble();
+    }
+
+    public boolean insideCircle(double x, double y)
+    {
+        return (Math.pow(x-h, 2) + Math.pow(y-k, 2) <= Math.pow(r, 2)) ? true : false;
     }
 
 }
